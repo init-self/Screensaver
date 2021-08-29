@@ -1,0 +1,38 @@
+@font-face
+{
+	font-family: Cinzel;
+	src: url('./dist/fonts/Cinzel-Family/Cinzel_Decorative/CinzelDecorative-Regular.ttf');
+}
+@font-face
+{
+	font-family: Roboto;
+	src: url('./dist/fonts/Roboto-Family/Roboto-Thin.ttf');
+}
+
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-size: 1rem;
+	background-color: #0B2545;
+	color: #EEF4ED;
+}
+#clock-time
+{
+	font-size: 3rem !important;
+	align-content: center;
+	font-family: Cinzel;
+}
+
+#string
+{
+	font-family: Roboto;
+	font-size: 1rem;
+	align-content: center;
+	text-align: center	;
+
+}

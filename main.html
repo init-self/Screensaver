@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Screen Saver</title>
+	<!-- Bootstrap 5 -->
+	<link rel="stylesheet" href="./dist/bootstrap5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+
+			<!-- Clock Template -->
+			<div class="col-md-12 justify-content-center">
+				<div class="mt-2 mb-5 p-3">
+					<span class="m-3" id="clock-time"></span>
+					<script type="text/javascript">
+						const clock = document.getElementById('clock-time')
+						const date = new Date()
+						let i = 0
+						let [day, month, year] = [date.getDate(), date.getMonth(), date.getFullYear()]
+						switch(month)
+						{
+							case 0: month = 'January'; break;
+							case 1: month = 'February'; break;
+							case 2: month = 'March'; break;
+							case 3: month = 'April'; break
+							case 4: month = 'May'; break;
+							case 5: month = 'June'; break;
+							case 6: month = 'July'; break;
+							case 7: month = 'August'; break;
+							case 8: month = 'September'; break;
+							case 9: month = 'October'; break;
+							case 10: month = 'November'; break;
+							case 11: month = 'December'; break;
+						}
+						setInterval(() =>
+						{
+							const date = new Date()
+							const formatTime = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`
+							const fulltime = date.toLocaleTimeString().slice(-3)
+							clock.innerHTML = formatTime + fulltime;
+						}, 1000)
+					</script>
+				</div>
+			</div>
+			<!-- Clock Template -->
+		</div>
+		<div class="row">
+			<div class="col-md-4 justify-content-center">
+				<p id="string" onload="textPlugin()"></p>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="./dist/plugins/gsap/minified/TextPlugin.min.js"></script>
+	<script type="text/javascript">
+		let string = document.getElementById('string')
+		textPlugin();
+		function textPlugin()
+		{
+			gsap.to(string, {duration: 2, text: "The Time is Ticking...", ease: "none"});
+		}
+</body>
+</html>
